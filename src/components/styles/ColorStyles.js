@@ -8,7 +8,7 @@ export const themes = {
     card: {
       backgroundColor: `rgba(255, 255, 255, 0.6)`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
-		  inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
       backgroundColorFull: `rgba(255, 255, 255, 1)`,
     },
     cardHover: {
@@ -24,7 +24,7 @@ export const themes = {
     modal: {
       backgroundColor: `rgba(255, 255, 255, 0.6)`,
       boxShadow: `0px 50px 100px rgba(34, 79, 169, 0.3),
-		  inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.6)`,
       backgroundColorFull: `rgba(255, 255, 255, 1)`,
     },
   },
@@ -35,7 +35,7 @@ export const themes = {
     card: {
       backgroundColor: `rgba(25, 24, 63, 0.98)`,
       boxShadow: `0px 30px 60px rgba(0, 0, 0, 0.25),
-		  inset 0 0 0 0.5px rgba(255, 255, 255, 0.2)`,
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.2)`,
       backgroundColorFull: `rgba(15, 14, 71, 1)`,
     },
     cardHover: {
@@ -51,7 +51,7 @@ export const themes = {
     modal: {
       backgroundColor: `rgba(50, 61, 109, 0.5)`,
       boxShadow: `0px 50px 100px rgba(0, 0, 0, 0.25),
-		  inset 0 0 0 0.5px rgba(255, 255, 255, 0.3)`,
+      inset 0 0 0 0.5px rgba(255, 255, 255, 0.3)`,
       backgroundColorFull: `rgba(15, 14, 71, 1)`,
     },
   },
