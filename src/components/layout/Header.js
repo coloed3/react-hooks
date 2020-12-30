@@ -1,39 +1,38 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-
-const menuData = [
-  {
-    title: "Courses",
-    icon: "/images/icons/courses.svg",
-    link: "/courses",
-  },
-  {
-    title: "Tutorials",
-    icon: "/images/icons/tutorials.svg",
-    link: "/tutorials",
-  },
-  {
-    title: "Pricing",
-    icon: "/images/icons/pricing.svg",
-    link: "/pricing",
-  },
-]
+import { menuData } from "../../data/menuData"
+import MenuButton from "../buttons/MenuButton"
+import MenuTooltip from "../tooltips/MenuTooltip"
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleClick(event) {
+    console.log(event)
+    setIsOpen(!isOpen)
+    event.preventDefault()
+  }
+
   return (
     <Wrapper>
-      <img src="/images/logos/logo.svg" alt="Logo" />
-      <MenuWrapper>
-        {menuData.map((item, index) => (
-          <Link src={item.link} key={index}>
-            <MenuItem>
-              <img src={item.icon} alt={item.title} />
-              {item.title}
-            </MenuItem>
-          </Link>
-        ))}
+      <Link to="/">
+        <img src="/images/logos/logo.svg" alt="Logo" />
+      </Link>
+      <MenuWrapper count={menuData.length}>
+        {menuData.map((item, index) =>
+          item.link === "/account" ? (
+            <MenuButton
+              item={item}
+              key={index}
+              onClick={event => handleClick(event)}
+            />
+          ) : (
+            <MenuButton item={item} key={index} />
+          )
+        )}
       </MenuWrapper>
+      <MenuTooltip isOpen={isOpen} />
     </Wrapper>
   )
 }
@@ -52,22 +51,5 @@ const Wrapper = styled.div`
 const MenuWrapper = styled.div`
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(3, auto);
-`
-
-const MenuItem = styled.div`
-  color: rgba(255, 255, 255, 0.7);
-  display: grid;
-  grid-template-columns: 24px auto;
-  gap: 10px;
-  align-items: center;
-  padding: 10px;
-  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-  :hover {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
-      inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-  }
+  grid-template-columns: repeat(${props => props.count}, auto);
 `
