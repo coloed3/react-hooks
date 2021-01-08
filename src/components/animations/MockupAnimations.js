@@ -9,6 +9,7 @@ export default function MockupAnimations() {
       <div className="mockup3" />
       <div className="mockup4" />
       <div className="mockup5" />
+      
     </Wrapper>
   )
 }
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
   perspective: 5000;
   
 @media (max-width: 768px) {
-  transform: scale(0.5);
+  transform: scale(0.45);
   transform-origin: top right;
 }
 @media (max-width: 450px) {
