@@ -12,4 +12,6 @@ function IndexPage() {
   )
 }
 
+
+
 export default IndexPage
